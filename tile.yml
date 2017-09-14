@@ -1,0 +1,40 @@
+# ------------------------------------------------------------------------
+#
+# Copyright 2017 WSO2, Inc. (http://wso2.com)
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License
+#
+# ------------------------------------------------------------------------
+---
+name: wso2apim-tile
+icon_file: resources/wso2-logo.png
+label: WSO2 API Manager 2.1.0
+description: PCF Tile for WSO2 API Manager 2.1.0
+packages:
+- name: wso2-apim
+  type: docker-bosh
+  docker_images:
+  - "wso2/wso2am:2.1.0"
+  routes:
+    - prefix: carbon
+      port: 9763
+  cpu: 2
+  memory: 4096
+  ephemeral_disk: 4096
+  instances: 1
+  manifest: |
+    containers:
+    - name: wso2apim
+      image: "wso2/wso2am:2.1.0"
+      bind_ports:
+      - "9763:9763"

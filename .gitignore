@@ -1,0 +1,12 @@
+release/
+product/
+tile-history.yml
+vendor/
+resources/*.zip
+resources/*.tgz
+docker-cache/
+cache/*.tgz
+cache/*.sh
+dockerfiles/apim/jdk-*
+dockerfiles/apim/mysql-connector-java-*
+dockerfiles/apim/wso2am-*
