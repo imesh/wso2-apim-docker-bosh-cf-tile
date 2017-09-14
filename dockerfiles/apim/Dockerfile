@@ -56,13 +56,10 @@ RUN unzip -q ${USER_HOME}/${WSO2_SERVER_PACK} -d ${USER_HOME}/ \
         && mkdir -p ${USER_HOME}/tmp \
         && cp ${USER_HOME}/${JDBC_DRIVER} \
             ${USER_HOME}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}/repository/components/lib/ \
-        && cp ${USER_HOME}/${KUBERNETES_MEMBERSHIP_SCHEME} \
-            ${USER_HOME}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}/repository/components/dropins/ \
         && cp -r ${USER_HOME}/${WSO2_SERVER}-${WSO2_SERVER_VERSION}/repository/deployment/server ${USER_HOME}/tmp/ \
         && rm ${USER_HOME}/${WSO2_SERVER_PACK} \
         && rm ${USER_HOME}/${JDK_ARCHIVE} \
         && rm ${USER_HOME}/${JDBC_DRIVER} \
-        && rm ${USER_HOME}/${KUBERNETES_MEMBERSHIP_SCHEME} \
 	&& mkdir -p ${USER_HOME}/scripts/ \
 	&& cat ${USER_HOME}/${STARTUP_SCRIPT} > ${USER_HOME}/scripts/${STARTUP_SCRIPT} \
 	&& rm ${USER_HOME}/${STARTUP_SCRIPT} \
